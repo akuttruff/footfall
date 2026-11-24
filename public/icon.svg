@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <!-- Full-bleed opaque ground: iOS masks to its own squircle. -->
+  <rect width="512" height="512" fill="#444444"/>
+  <!-- Footprints walking up the page, the last one in gold. -->
+  <g fill="#FFFFFF" opacity="0.75">
+    <ellipse cx="196" cy="380" rx="34" ry="52"/>
+    <ellipse cx="300" cy="290" rx="34" ry="52"/>
+    <ellipse cx="196" cy="200" rx="34" ry="52"/>
+  </g>
+  <ellipse cx="300" cy="110" rx="34" ry="52" fill="#3D92C9"/>
+</svg>
