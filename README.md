@@ -5,6 +5,11 @@ which pages they land on, where they came from and on what, with the
 crawlers and vulnerability scanners counted separately. It runs on a Mac
 at home and is reached from a phone over Tailscale.
 
+![Footfall showing a month of made-up visits to example.com](docs/screenshot.png)
+
+The screenshot is demo data: `npm run demo:data && npm run demo` fills a
+scratch database with a month of invented traffic and serves it on :8600.
+
 ## Where the numbers come from
 
 The site is static files on AWS Amplify Hosting. Footfall reads

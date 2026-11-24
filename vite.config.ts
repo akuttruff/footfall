@@ -10,9 +10,10 @@ const TAILNET = '.ts.net'
 export default defineConfig(({ command, isPreview }) => {
   // `vite preview` is the one real instance: it fetches every hour into
   // .data. `vite dev` keeps its own scratch database in .data-dev and
-  // fetches only when its Refresh button is pressed.
+  // fetches only when its Refresh button is pressed (FOOTFALL_DATA picks
+  // another, as `npm run demo` does).
   const real = command === 'build' || isPreview
-  const dir = real ? undefined : path.resolve(process.cwd(), '.data-dev')
+  const dir = real ? undefined : path.resolve(process.cwd(), process.env.FOOTFALL_DATA ?? '.data-dev')
 
   return {
     // A build only bundles the page; the API starts with the server that serves it.
@@ -23,7 +24,7 @@ export default defineConfig(({ command, isPreview }) => {
       port: 8600,
       strictPort: true,
       allowedHosts: [TAILNET],
-      watch: { ignored: ['**/coverage/**', '**/.data/**', '**/.data-dev/**'] },
+      watch: { ignored: ['**/coverage/**', '**/.data/**', '**/.data-dev/**', '**/.data-demo/**'] },
     },
     // The persistent, built instance Tailscale points at, beside `npm run dev`.
     preview: { host: '127.0.0.1', port: 8610, strictPort: true, allowedHosts: [TAILNET] },

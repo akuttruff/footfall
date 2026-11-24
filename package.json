@@ -12,7 +12,9 @@
     "lint": "oxlint",
     "check": "tsc --noEmit && oxlint && vitest run",
     "deploy": "sh scripts/deploy.sh",
-    "fetch": "node --experimental-transform-types --no-warnings scripts/fetch.ts"
+    "fetch": "node --experimental-transform-types --no-warnings scripts/fetch.ts",
+    "demo:data": "node --experimental-transform-types --no-warnings scripts/demo.ts",
+    "demo": "FOOTFALL_DATA=.data-demo FOOTFALL_APP_ID=demo FOOTFALL_DOMAIN=example.com vite"
   },
   "dependencies": {
     "lucide-react": "^1.48.0",

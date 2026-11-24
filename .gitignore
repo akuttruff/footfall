@@ -3,6 +3,7 @@ dist
 coverage
 .data
 .data-dev
+.data-demo
 *.log
 .DS_Store
 *.tsbuildinfo
